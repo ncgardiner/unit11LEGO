@@ -1,15 +1,68 @@
-import lejos.nxt.Button;
-import lejos.nxt.Motor;
+import lejos.nxt.*;
+import lejos.robotics.navigation.DifferentialPilot;
 public class HelloWorld
 {
     public static void main(String[] args)
     {
-        System.out.println("wee woo wee woo");
+        DifferentialPilot pilot = new DifferentialPilot(2.2,2.2,6.5,Motor.B,Motor.C,false);
+        TouchSensor touch = new TouchSensor(SensorPort.S2);
         Button.waitForAnyPress();
-        System.out.println("it's the sexy police");
+        pilot.travel(12);
         Button.waitForAnyPress();
-        Motor.B.forward();
-        Motor.C.forward();
+        pilot.rotate(360);
+        Button.waitForAnyPress();
+        while (!touch.isPressed()){}
+        System.out.println("YEET");
         Button.waitForAnyPress();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
